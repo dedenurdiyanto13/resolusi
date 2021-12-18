@@ -4,7 +4,10 @@ RENCANA KERJA
    - HTML-CSS
    - Javascript
    - Framework HTML-CSS
+     * Bootstrap
    - Framework Javascript
+     * Svelte
+     * React
 2. Backend Developer
 3. Fullstack Developer
 4. YouTube Tutorial
