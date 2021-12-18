@@ -1,0 +1,16 @@
+# Branching (jalur 'development' bebas dari sebuha commit)
+
+- Membuat Git Branch
+- Membuat sanpshot tanpa mengganggu jalur utama (Mater Branch)
+- Fitur Experimental 
+- 2 orang mengerjakan repo yang sama
+
+# Checkout (berpindah ke branch / commit yang lain
+
+# Pull Request (meminta pemilik repo untuk 'mengambil' perubahan
+yang telah dilakukan)
+
+# Merge (menggabungkan 2 buah branch)
+
+# Merge Conflict (baris yang sama diubah oleh 2 branch yang 
+berbeda)
