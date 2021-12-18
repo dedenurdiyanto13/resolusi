@@ -16,5 +16,7 @@ RESOLUSI DI 2022
   - GitHub
   - GitLab
   
-# Bekerja sebagai programmer
-  - Junior Programmer
+# Add Website
+  - My Profile
+  - Company Profile
+
