@@ -1,0 +1,17 @@
+RESOLUSI DI 2022
+
+# Mengasai frontend 
+  - HTML
+  - CSS
+  - Javascript
+  - React JS
+
+# Menguasai backend
+  - Node JS
+  - MySQL
+  - Mongo DB
+
+# Mengasai Git
+  - Git
+  - GitHub
+  - GitLab
