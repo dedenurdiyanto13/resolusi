@@ -1,0 +1,296 @@
+# Jenis Merge 
+Fast-forward
+Three-way Merge
+
+# PRAKTEK
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop
+$ ls
+ ALL/               Screenshot_9.jpg        eduwork-family.jpg
+ EDUWORK/           UNPAS/                  indobot.txt
+'HABIS KERJA.txt'   belajar-html/           normalisasi.txt
+ HTML/              belajar-html-lat/       portfolio/
+ Midtrans.jpg       belajar-php-terminal/   tikus/
+ Screenshot_8.jpg   desktop.ini            '~$RMOHONAN IZIN OPERASIONAL.docx'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop
+$ cd UNPAS
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ ls
+'Git & Github'/   test-git/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ mkdir test-git-2
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ ls
+'Git & Github'/   test-git/   test-git-2/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ cd test-git-2
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2
+$ code .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2
+$ git init
+Initialized empty Git repository in C:/Users/acer/Desktop/UNPAS/test-git-2/.git/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mahasiswa.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   mahasiswa.html
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git commit -m "menambahkan file mahasiswa.html"
+[master (root-commit) a8d9d37] menambahkan file mahasiswa.html
+ 1 file changed, 16 insertions(+)
+ create mode 100644 mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git commit -am "menambah list mahasiswa"
+[master f22d8f8] menambah list mahasiswa
+ 1 file changed, 1 insertion(+)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch dosen
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch
+  dosen
+* master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git log
+commit f22d8f840681dc203a72ad87e9fb770544706b1a (HEAD -> master, staff, dosen)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 05:26:19 2021 +0700
+
+    menambah list mahasiswa
+
+commit a8d9d37b6a0591e21c5d57fbfa59db39328fbd0d
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 05:25:20 2021 +0700
+
+    menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git log --all --decorate --oneline --graph
+* f22d8f8 (HEAD -> master, staff, dosen) menambah list mahasiswa
+* a8d9d37 menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ alias graph="git log --all --decorate --oneline --graph"
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ graph
+* f22d8f8 (HEAD -> master, staff, dosen) menambah list mahasiswa
+* a8d9d37 menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch
+  dosen
+* master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git checkout dosen
+Switched to branch 'dosen'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git branch
+* dosen
+  master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git status
+On branch dosen
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        dosen.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git commit -m "menambahkan file dosen.html"
+[dosen 28c80e2] menambahkan file dosen.html
+ 1 file changed, 16 insertions(+)
+ create mode 100644 dosen.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git checkout master
+Switched to branch 'master'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git checkout dosen
+Switched to branch 'dosen'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git status
+On branch dosen
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ graph
+* 28c80e2 (HEAD -> dosen) menambahkan file dosen.html
+* f22d8f8 (staff, master) menambah list mahasiswa
+* a8d9d37 menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (dosen)
+$ git checkout staff
+Switched to branch 'staff'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ git status
+On branch staff
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        staff.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ git commit -m "menambahkan file staff.html"
+[staff f40c427] menambahkan file staff.html
+ 1 file changed, 16 insertions(+)
+ create mode 100644 staff.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ graph
+* f40c427 (HEAD -> staff) menambahkan file staff.html
+| * 28c80e2 (dosen) menambahkan file dosen.html
+|/
+* f22d8f8 (master) menambah list mahasiswa
+* a8d9d37 menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ git branch
+  dosen
+  master
+* staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (staff)
+$ git checkout master
+Switched to branch 'master'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git merge dosen
+Updating f22d8f8..28c80e2
+Fast-forward
+ dosen.html | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 dosen.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch
+  dosen
+* master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch --merged
+  dosen
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch -d dosen
+Deleted branch dosen (was 28c80e2).
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch
+* master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch -d staff
+error: The branch 'staff' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D staff'.
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git merge staff
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ staff.html | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 staff.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ graph
+*   d0ff2ed (HEAD -> master) Merge branch 'staff'
+|\
+| * f40c427 (staff) menambahkan file staff.html
+* | 28c80e2 menambahkan file dosen.html
+|/
+* f22d8f8 menambah list mahasiswa
+* a8d9d37 menambahkan file mahasiswa.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch --merged
+* master
+  staff
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git branch -d staff
+Deleted branch staff (was f40c427).
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-2 (master)
+$
