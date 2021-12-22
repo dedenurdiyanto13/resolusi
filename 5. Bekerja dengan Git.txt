@@ -1,0 +1,301 @@
+# TEST
+git
+git --version
+clear
+pwd
+
+# GIT COMMAND (LOCAL)
+git init
+git add <file(s)>
+git status
+git commit
+git config
+git branch
+git help
+git log
+git log -3 // hanya 3 commit terakhir
+git log -- style.css // hanya yang berkaitan dengan file style.css
+git checkout
+git checkout 6c5f3 -- style.css // mengembalikan file yg telah dihapus
+...
+
+# 3 AREA PADA REPO GIT
+- Working Tree
+- Staging Area (.git)
+- History (.git)
+
+Working Tree -> (git add) -> Staging Area -> (git commit) -> History
+
+
+# PRAKTERK 
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ mkdir test-git
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ ls
+'Git & Github'/   test-git/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ cd test-git
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git
+$ ls
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git
+$ git init
+Initialized empty Git repository in C:/Users/acer/Desktop/UNPAS/test-git/.git/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ code .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git add index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git commit
+hint: Waiting for your editor to close the file...
+Aborting commit due to empty commit message.
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git config --global user.name
+dedenurdiyanto13
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git config --global user.email
+dedenurdiyanto13@gmail.com
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git commit -m "Menambahkan file index.html"
+[master (root-commit) b935091] Menambahkan file index.html
+ 1 file changed, 10 insertions(+)
+ create mode 100644 index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git commit -m "Mengubah file index.html dan menambah file style.css"
+[master 6c5f392] Mengubah file index.html dan menambah file style.css
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        deleted:    style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        script.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+        new file:   script.js
+        deleted:    style.css
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git commit -m "mengubah file index.html, menambah file script.js dan menghapus file style.css"
+[master d614f18] mengubah file index.html, menambah file script.js dan menghapus file style.css
+ 3 files changed, 9 insertions(+), 1 deletion(-)
+ create mode 100644 script.js
+ delete mode 100644 style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+commit b935091f8dc74ccf6d4a2a9d6a3450c5bdc405c3
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:32:53 2021 +0700
+
+    Menambahkan file index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log -3
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+commit b935091f8dc74ccf6d4a2a9d6a3450c5bdc405c3
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:32:53 2021 +0700
+
+    Menambahkan file index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log -3
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+commit b935091f8dc74ccf6d4a2a9d6a3450c5bdc405c3
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:32:53 2021 +0700
+
+    Menambahkan file index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log -2
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log -- style.css
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git log
+commit d614f18322836cf2aa963c876bb31dfbfcaaa84b (HEAD -> master)
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:47:02 2021 +0700
+
+    mengubah file index.html, menambah file script.js dan menghapus file style.css
+
+commit 6c5f3929eb4ad09d3f3898db12525e1a0432efc8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:38:16 2021 +0700
+
+    Mengubah file index.html dan menambah file style.css
+
+commit b935091f8dc74ccf6d4a2a9d6a3450c5bdc405c3
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Wed Dec 22 14:32:53 2021 +0700
+
+    Menambahkan file index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git checkout 6c5f3 -- style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   style.css
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git commit -m "Mengembalikan file style.css"
+[master a6a15c9] Mengembalikan file style.css
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 style.css
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git (master)
+$
