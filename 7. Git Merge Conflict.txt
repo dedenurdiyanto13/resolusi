@@ -1,0 +1,425 @@
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch dev
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch
+  dev
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git branch
+* dev
+  master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   staff.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git commit -am "update mahasiswa.html file"
+[dev d011480] update mahasiswa.html file
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git status
+On branch dev
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ graph
+* d011480 (HEAD -> dev) update mahasiswa.html file
+*   cefd6d3 (master) Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git checkout master
+Switched to branch 'master'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ graph
+* d011480 (dev) update mahasiswa.html file
+*   cefd6d3 (HEAD -> master) Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mahasiswa.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git commit -am "update mahasiswa.html file"
+[master e2a8d40] update mahasiswa.html file
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ graph
+* e2a8d40 (HEAD -> master) update mahasiswa.html file
+| * d011480 (dev) update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch
+  dev
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git merge dev
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ staff.html | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ graph
+*   c3ab27e (HEAD -> master) Merge branch 'dev'
+|\
+| * d011480 (dev) update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   mahasiswa.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git commit -am "update mahasiswa.html file"
+[dev 400e3a8] update mahasiswa.html file
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (dev)
+$ git checkout master
+Switched to branch 'master'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch
+  dev
+* master
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git merge dev
+Auto-merging mahasiswa.html
+CONFLICT (content): Merge conflict in mahasiswa.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   mahasiswa.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master|MERGING)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master|MERGING)
+$ git commit
+hint: Waiting for your editor to close the file...
+[master a8cbc47] Merge branch 'dev'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ graph
+*   a8cbc47 (HEAD -> master) Merge branch 'dev'
+|\
+| * 400e3a8 (dev) update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch -d dev
+Deleted branch dev (was 400e3a8).
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git branch
+* master
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git log
+commit a8cbc47c09e41c75bbf1b73a54d0b5ba4cda3a07 (HEAD -> master)
+Merge: c3ab27e 400e3a8
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 16:29:13 2021 +0700
+
+    Merge branch 'dev'
+
+commit 400e3a8062a4429d8cfc366a3d18b6e22bc58839
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 16:25:27 2021 +0700
+
+    update mahasiswa.html file
+
+commit c3ab27e9fc61714e231e687f0d4e08dbe4b63c0e
+Merge: e2a8d40 d011480
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 16:21:19 2021 +0700
+
+    Merge branch 'dev'
+
+commit e2a8d4028a3f8f0c600c9f952501b27006e85568
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 16:19:56 2021 +0700
+
+    update mahasiswa.html file
+
+commit d011480518ccef4d043e8dc1d0875f73d891599a
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:48:18 2021 +0700
+
+    update mahasiswa.html file
+
+commit cefd6d302dbce3a4bef98ae76381c39750d2c834
+Merge: 76a3506 3a3e5b5
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:37:23 2021 +0700
+
+    Merge branch 'staff'
+
+
+
+commit 3a3e5b5e74227481c6d10c8631b35c0e0ff0323f
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:33:25 2021 +0700
+
+    add staff.html
+
+commit 76a35065827bcfd7a87232f682eaa8eec83bf09a
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:24:12 2021 +0700
+
+    add deosen.html file
+
+commit 0e697095420efea8aad01618fbcbd3005b589143
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:17:04 2021 +0700
+
+    update content of mahasiswa.html file
+
+commit b0428acb329c926c2e44ffd5942ba35ca37f3479
+Author: dedenurdiyanto13 <dedenurdiyanto13@gmail.com>
+Date:   Thu Dec 23 15:15:03 2021 +0700
+
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git checkout 76a3506
+Note: switching to '76a3506'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 76a3506 add deosen.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ graph
+*   a8cbc47 (master) Merge branch 'dev'
+|\
+| * 400e3a8 update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 (HEAD) add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ git checkout master
+Previous HEAD position was 76a3506 add deosen.html file
+Switched to branch 'master'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ graph
+*   a8cbc47 (HEAD -> master) Merge branch 'dev'
+|\
+| * 400e3a8 update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (master)
+$ git checkout 76a3506
+Note: switching to '76a3506'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 76a3506 add deosen.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ graph
+*   a8cbc47 (master) Merge branch 'dev'
+|\
+| * 400e3a8 update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 (HEAD) add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ git branch test
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ git branch
+* (HEAD detached at 76a3506)
+  master
+  test
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ graph
+*   a8cbc47 (master) Merge branch 'dev'
+|\
+| * 400e3a8 update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 (HEAD, test) add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch ((76a3506...))
+$ git checkout test
+Switched to branch 'test'
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (test)
+$ graph
+*   a8cbc47 (master) Merge branch 'dev'
+|\
+| * 400e3a8 update mahasiswa.html file
+* | c3ab27e Merge branch 'dev'
+|\|
+| * d011480 update mahasiswa.html file
+* | e2a8d40 update mahasiswa.html file
+|/
+*   cefd6d3 Merge branch 'staff'
+|\
+| * 3a3e5b5 add staff.html
+* | 76a3506 (HEAD -> test) add deosen.html file
+|/
+* 0e69709 update content of mahasiswa.html file
+* b0428ac add mahasiswa.html file
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/test-git-branch (test)
+$
+
+
