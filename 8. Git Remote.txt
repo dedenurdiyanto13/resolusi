@@ -1,0 +1,177 @@
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ git clone https://github.com/dedenurdiyanto13/git-remote-test.git
+Cloning into 'git-remote-test'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ ls
+'Git & Github'/   git-remote-test/   test-git/   test-git-2/   test-git-branch/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS
+$ cd git-remote-test
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ code .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git remote
+origin
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git remote -v
+origin  https://github.com/dedenurdiyanto13/git-remote-test.git (fetch)
+origin  https://github.com/dedenurdiyanto13/git-remote-test.git (push)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ alias graph="git log --all --decorate --oneline --graph"
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ graph
+* dcac29b (HEAD -> main, origin/main, origin/HEAD) Initial commit
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git commit -m "menambahkan file index.html"
+[main 3e57093] menambahkan file index.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ graph
+* 3e57093 (HEAD -> main) menambahkan file index.html
+* dcac29b (origin/main, origin/HEAD) Initial commit
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 492 bytes | 164.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/dedenurdiyanto13/git-remote-test.git
+   dcac29b..3e57093  main -> main
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ graph
+* 3e57093 (HEAD -> main, origin/main, origin/HEAD) menambahkan file index.html
+* dcac29b Initial commit
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+core.editor="C:\Users\acer\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait
+core.autocrlf=true
+user.name=dedenurdiyanto13
+user.email=dedenurdiyanto13@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git config --global user.name "dedenurdiyanto13"
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git config --global user.email "dedenurdiyanto13@gmail.com"
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git commit -am "menambahkan paragraf"
+[main 283fc62] menambahkan paragraf
+ 1 file changed, 1 insertion(+)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ graph
+* 283fc62 (HEAD -> main) menambahkan paragraf
+* 3e57093 (origin/main, origin/HEAD) menambahkan file index.html
+* dcac29b Initial commit
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 392 bytes | 392.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dedenurdiyanto13/git-remote-test.git
+   3e57093..283fc62  main -> main
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/UNPAS/git-remote-test (main)
+$
+
+
+
+
+
