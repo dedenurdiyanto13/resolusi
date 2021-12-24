@@ -1,0 +1,76 @@
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3
+$ ls
+css/  img/  index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3
+$ git init
+Initialized empty Git repository in C:/Users/acer/Desktop/portfolio-3/.git/
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        img/
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git add .
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git commit -m "initial commit"
+[master (root-commit) e0f9585] initial commit
+ 6 files changed, 427 insertions(+)
+ create mode 100644 css/style.css
+ create mode 100644 img/about.jpg
+ create mode 100644 img/hero.jpg
+ create mode 100644 img/hero.png
+ create mode 100644 img/hero2.png
+ create mode 100644 index.html
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git remote
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git remote add origin https://github.com/dedenurdiyanto13/dede-landing-2.git
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (master)
+$ git branch -M main
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (main)
+$ git push -u origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 753.45 KiB | 11.96 MiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/dedenurdiyanto13/dede-landing-2.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (main)
+$ git remote -v
+origin  https://github.com/dedenurdiyanto13/dede-landing-2.git (fetch)
+origin  https://github.com/dedenurdiyanto13/dede-landing-2.git (push)
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+acer@DESKTOP-N6361PR MINGW64 ~/Desktop/portfolio-3 (main)
+$
